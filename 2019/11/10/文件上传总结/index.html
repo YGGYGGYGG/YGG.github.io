@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>文件上传总结 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="文件上传漏洞什么是文件上传漏洞？Web应用程序通常会有文件上传的功能, 例如在 BBS发布图片 , 在个人网站发布ZIP 压缩 包, 在办公平台发布DOC文件等 , 只要 Web应用程序允许上传文件, 就有可能存在文件上传漏洞. 什么样的网站会有文件上传漏洞?上传文件时，如果服务端代码未对客户端上传的文件进行严格的验证和过滤，就容易造成可以上传任意文件的情况，包括上传脚本文件（ asp aspx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文件上传总结">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%80%BB%E7%BB%93&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="文件上传漏洞什么是文件上传漏洞？Web应用程序通常会有文件上传的功能, 例如在 BBS发布图片 , 在个人网站发布ZIP 压缩 包, 在办公平台发布DOC文件等 , 只要 Web应用程序允许上传文件, 就有可能存在文件上传漏洞. 什么样的网站会有文件上传漏洞?上传文件时，如果服务端代码未对客户端上传的文件进行严格的验证和过滤，就容易造成可以上传任意文件的情况，包括上传脚本文件（ asp aspx">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-11T11:09:38.335Z">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/Inch_wine_time.jpeg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-文件上传总结" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      文件上传总结
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/11/10/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2019-11-10T05:45:57.364Z" itemprop="datePublished">2019-11-10</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="文件上传漏洞"><a href="#文件上传漏洞" class="headerlink" title="文件上传漏洞"></a>文件上传漏洞</h1><h2 id="什么是文件上传漏洞？"><a href="#什么是文件上传漏洞？" class="headerlink" title="什么是文件上传漏洞？"></a>什么是文件上传漏洞？</h2><p>Web应用程序通常会有文件上传的功能, 例如在 BBS发布图片 , 在个人网站发布ZIP 压缩 包, 在办公平台发布DOC文件等 , 只要 Web应用程序允许上传文件, 就有可能存在文件上传漏洞.</p>
+<h2 id="什么样的网站会有文件上传漏洞"><a href="#什么样的网站会有文件上传漏洞" class="headerlink" title="什么样的网站会有文件上传漏洞?"></a>什么样的网站会有文件上传漏洞?</h2><p>上传文件时，如果服务端代码未对客户端上传的文件进行严格的验证和过滤，就容易造成可以上传任意文件的情况，包括上传脚本文件（ asp aspx php jsp 等格式的文件）<br>危害<br>非法用户可以利用上传的恶意脚本文件控制整个网站，甚至控制服务器 这个恶意的脚本文件，又被称为WebShell ，也可将WebShell 脚本称为一种网页后门，WebShell脚本具有非常强大的功能，比如查看服务器目录、服务器中的文件，执行系统命令等。</p>
+<h2 id="Webshell简介"><a href="#Webshell简介" class="headerlink" title="Webshell简介##"></a>Webshell简介##</h2><p>WebShell就是以asp、php、jsp或者cgi等网页文件形式存在的一种命令执行环境，也可以将其称之为一种网页后门。攻击者在入侵了一个网站后，通常会将这些asp或php后门文件与网站服务器web目录下正常的网页文件混在一起，然后使用浏览器来访问这些后门，得到一个命令执行环境，以达到控制网站服务器的目的（可以上传下载或者修改文件，操作数据库，执行任意命令等）。</p>
+<p>WebShell后门隐蔽较性高，可以轻松穿越防火墙，访问WebShell时不会留下系统日志，只会在网站的web日志中留下一些数据提交记录，没有经验的管理员不容易发现入侵痕迹。</p>
+<p>攻击者可以将WebShell隐藏在正常文件中并修改文件时间增强隐蔽性，也可以采用一些函数对WebShell进行编码或者拼接以规避检测。除此之外，通过一句话木马的小马来提交功能更强大的大马可以更容易通过应用本身的检测。<code>&lt;?php eval($_POST[a]); ?&gt;</code>就是一个最常见最原始的小马。</p>
+<h2 id="造成文件上传漏洞的原因"><a href="#造成文件上传漏洞的原因" class="headerlink" title="造成文件上传漏洞的原因"></a>造成文件上传漏洞的原因</h2><ol>
+<li>对于上传文件的后缀名（扩展名）没有做较为严格的限制</li>
+<li>对于上传文件的MIMETYPE（用于描述文件的类型的一种表述方法）没有做检查</li>
+<li>权限上没有对于上传的文件目录设置不可执行权限，（尤其是对于shebang类型的文件）</li>
+<li>对于web server对于上传文件或者指定目录的行为没有做限制<h2 id="文件上传漏洞的攻击方式"><a href="#文件上传漏洞的攻击方式" class="headerlink" title="文件上传漏洞的攻击方式"></a>文件上传漏洞的攻击方式</h2></li>
+</ol>
+<p><strong>一. 前端限制</strong></p>
+<p>当用户在客户端选择文件点击上传的时候，客户端还没有向服务器发送任何消息，就对本地文件进行检测来判断是否是可以上传的类型，这种方式称为前台脚本检测扩展名。（参考upload-labs pass-01的做法)</p>
+<p>绕过方法</p>
+<ol>
+<li><p>绕过前台脚本检测扩展名，就是将所要上传文件的扩展名更改为符合脚本检测规则的扩展名，通过BurpSuite截取数据包，并将数据包中文件扩展名更改回原来的，达到绕过的目的。<br>例如:文件名本来为<code>.jpg</code>，上传时，用BurpSuite截包后，将数据包中的名字改为<code>.php</code>(或其它脚本类型)即可。</p>
+</li>
+<li><p>如果是JS脚本检测，在本地浏览器客户端禁用JS即可。可使用火狐浏览器的NoScript插件、IE中禁用掉JS等方式实现。</p>
+</li>
+</ol>
+<p><strong>二.检查扩展名</strong></p>
+<p>就是在文件被上传到服务端的时候，对于文件名的扩展名进行检查，如果不合法，则拒绝这次上传。在检查扩展名是否合法的时候，有两种策略：</p>
+<ol>
+<li>黑名单策略，文件扩展名在黑名单中的为不合法</li>
+<li>白名单策略，文件扩展名不在白名单中的均为不合法</li>
+</ol>
+<p>绕过方法</p>
+<ol>
+<li>利用老版本的IIS6中的漏洞</li>
+</ol>
+<pre><code>目录解析漏洞：如果网站目录中有一个 /.asp/目录，那么此目录下的一切内容都会被当作asp脚本来解析
+
+分号漏洞：IIS在解析文件名的时候可能将分号后面的内容丢弃，那么我们可以在上传的时候给后面加入分号内容来避免黑名单过滤，如 a.asp;jpg</code></pre><ol start="2">
+<li><p>旧版Windows Server中存在空格和dot漏洞类似于 a.php. 和 a.php[空格] 这样的文件名存储后会被windows去掉点和空格，从而使得加上这两个东西可以突破过滤，成功上传，并且被当作php代码来执行(参考upload-labs pass-06的做法)</p>
+</li>
+<li><p>nginx(0.5.x,0.6.x,0.7&lt;=0.7.65,0.8&lt;=0.8.37)空字节漏洞,文件名.jpg%00.php会被解析为php代码运行（fastcgi会把这个文件当php看，不受空字节影响，但是检查文件后缀的那个功能会把空字节后面的东西抛弃，所以识别为jpg）</p>
+</li>
+<li><p>apache1.x,2.x的解析漏洞，上传如a.php.rar/a.php.gif 类型的文件名来避免对于php文件的过滤机制。由于apache在解析文件名的时候是从右向左读，遇到不能识别的扩展名则跳过，rar等扩展名是apache不能识别的，因此就会直接将类型识别为php，从而注入php代码</p>
+</li>
+</ol>
+<p><strong>三.检查HTTP Header中的Content-Type</strong></p>
+<ul>
+<li>HTTP协议规定了上传资源的时候在Header中加上一项文件的MIMETYPE，来识别文件类型，这个动作是由浏览器完成的，服务端可以检查此类型，不过这仍然是不安全的,因为HTTP header可以被发出者或者中间人任意的修改，不过加上一层防护也有一定的防御效果的</li>
+</ul>
+<p>绕过方法</p>
+<ul>
+<li>使用工具（如burpsuite）强行篡改Header，将<code>Content-Type: application/php</code>改为其他web程序允许的类型,如:<code>Content-Type: image/jpg</code>(参考upload-labs pass-02的做法)</li>
+</ul>
+<p><strong>四.分析文件头内容来检查文件类型</strong></p>
+<ul>
+<li>每一个特定类型的文件都会有不太一样的开头或者标志位。在正常情况下，通过判断前10个字节，基本上就能判断出一个文件的真实类型。图片文件通常有称作幻数的头字节</li>
+</ul>
+<p>绕过方法</p>
+<ul>
+<li>给上传脚本加上相应的幻数头字节(如：GIF89a)。php引擎会将 &lt;?之前的内容当作html文本，不解释而跳过，后面的代码仍然能够得到执行<br>（一般不限制图片文件格式的时候使用GIF的头比较方便，因为全都是文本可打印字符。）</li>
+</ul>
+<p><strong>五.限制Web Server对于特定类型文件的行为</strong></p>
+<ul>
+<li><p>一般来说，用户上传的内容都会被存储到一个特定的文件夹下，要防止数据被当作代码执行，我们可以限制web server对于特定文件夹的行为。以Apache为例：</p>
+<p>   在默认情况下，Apache会把.php文件当作代码来执行；对于 html,css,js文件，则会直接由HTTP Response交给客户端程序；对于一些资源文件，如txt，doc，rar等，会以文件下载的方式传送的客户端。我们希望用户上传的东西仅仅当作资源和数据而不能当作代码，因此可以使用服务器程序的接口来进行限制，我们可以利用 .htaccess 文件机制来对web server行为进行限制。</p>
+<p>  禁止脚本执行有多种方式，而且分别有不同的效果：</p>
+<ol>
+<li>指定特定扩展名的文件的处理方式。原理是指定Response的Content-Type。</li>
+<li>完全禁止特定扩展名的文件被访问。</li>
+<li>强制web服务器对于特定文件类型的处理</li>
+<li>只允许访问特定类型的文件</li>
+</ol>
+</li>
+</ul>
+<p>绕过方法</p>
+<ul>
+<li>把自己写的.htaccess 文件上传，覆盖掉服务器上的文件，来定义文件类型和执行权限。(参考upload-labs pass-04的做法)</li>
+</ul>
+<p><strong>六.文件系统00截断</strong></p>
+<ul>
+<li>上传的时候，当文件系统读到<code>0x00</code>时，会认为文件已经结束。00截断就是利用程序员在写程序时对文件的上传路径过滤不严格，产生0x00的上传截断漏洞。</li>
+</ul>
+<p>绕过方法</p>
+<ul>
+<li>通过抓包截断将<code>.php.jpg</code>后面的一个<code>.</code>换成<code>0x00</code>。在上传的时候，当文件系统读到<code>0x00</code>时，会认为文件已经结束，从而将<code>evil.php.jpg</code>的内容写入到<code>evil.php</code>中，从而达到攻击的目的。</li>
+</ul>
+<p><strong>七.其它方式—绕过</strong></p>
+<ul>
+<li>部分程序员的思维不严谨，并使用逻辑不完善的上传文件合法性检测手段，导致可以找到方式绕过其检测方式。</li>
+</ul>
+<p>绕过方法</p>
+<ol>
+<li>后缀名大小写绕过<br>用于只将小写的脚本后缀名(如php)过滤掉的情况。例如:将文件名<code>.php</code>改为<code>.Php</code>(参考upload-labs pass-05的做法)</li>
+<li>双写后缀名绕过<br>用于只将文件后缀名过滤掉的情况。<br>例如:过滤”php”字符串。将文件名<code>.php</code>改为<code>.pphphp</code>，那么过滤了第一个”php”字符串”后，开头的’p’和结尾的’hp’就组合又形成了php。 (参考upload-labs pass-10的做法)</li>
+<li>特殊后缀名绕过<br>用于检测文件合法性的脚本有问题的情况；<br>例如:将<code>.php</code>改为<code>.php6</code>，或加个空格改为<code>.php</code>等</li>
+</ol>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/11/03/upload-labs/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">upload-labs</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpg" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        寸酒光阴
+      
+    </h3>
+    <p class="avatar-slogan">
+      正在学习web的小白。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/10/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%80%BB%E7%BB%93/">文件上传总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/03/upload-labs/">upload-labs</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/03/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%8F%8A%E5%BA%94%E7%94%A8/">线性表的基本操作及应用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/01/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yggyggygg.github.io/" title target='_blank'
+        >寸酒光阴</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 John Doe &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity" target="_blank" rel="noopener">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
