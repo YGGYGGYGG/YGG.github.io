@@ -22,7 +22,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191026143807559.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZlZ2V0YWJsZV9oYWtlcg==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191026143859641.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZlZ2V0YWJsZV9oYWtlcg==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191026143931868.png">
-<meta property="og:updated_time" content="2019-11-03T10:42:08.793Z">
+<meta property="og:updated_time" content="2019-11-11T12:24:12.419Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191026143457830.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZlZ2V0YWJsZV9oYWtlcg==,size_16,color_FFFFFF,t_70">
   
@@ -112,12 +112,8 @@
 <p>（5）实现在指定位置插入和删除元素的功能。 </p>
 <p> [测试数据]</p>
 <p>单链表的结点类型定义：</p>
-<pre><code>    //定义单链表的结点类型 
-typedef struct LNode
-{   
-ElemType data;
-  struct LNode *next;
-}LNode,*LinkedList;</code></pre><p>插入函数：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">//定义单链表的结点类型 </span></span><br><span class="line">typedef struct LNode</span><br><span class="line">&#123;   </span><br><span class="line">ElemType data;</span><br><span class="line">  struct LNode *next;</span><br><span class="line">&#125;LNode,*LinkedList;</span><br></pre></td></tr></table></figure></div>
+<p>插入函数：</p>
 <p>插入时需要输入插入的位置及插入元素，代码如下：</p>
 <pre><code>void ListInsert(LinkList &amp;L,int e,int i)
 {

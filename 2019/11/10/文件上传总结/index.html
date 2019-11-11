@@ -10,14 +10,14 @@
   
   
   
-  <meta name="description" content="文件上传漏洞什么是文件上传漏洞？Web应用程序通常会有文件上传的功能, 例如在 BBS发布图片 , 在个人网站发布ZIP 压缩 包, 在办公平台发布DOC文件等 , 只要 Web应用程序允许上传文件, 就有可能存在文件上传漏洞. 什么样的网站会有文件上传漏洞?上传文件时，如果服务端代码未对客户端上传的文件进行严格的验证和过滤，就容易造成可以上传任意文件的情况，包括上传脚本文件（ asp aspx">
+  <meta name="description" content="title 文件上传漏洞什么是文件上传漏洞？Web应用程序通常会有文件上传的功能, 例如在 BBS发布图片 , 在个人网站发布ZIP 压缩 包, 在办公平台发布DOC文件等 , 只要 Web应用程序允许上传文件, 就有可能存在文件上传漏洞. 什么样的网站会有文件上传漏洞?上传文件时，如果服务端代码未对客户端上传的文件进行严格的验证和过滤，就容易造成可以上传任意文件的情况，包括上传脚本文件（ as">
 <meta property="og:type" content="article">
 <meta property="og:title" content="文件上传总结">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%80%BB%E7%BB%93&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="文件上传漏洞什么是文件上传漏洞？Web应用程序通常会有文件上传的功能, 例如在 BBS发布图片 , 在个人网站发布ZIP 压缩 包, 在办公平台发布DOC文件等 , 只要 Web应用程序允许上传文件, 就有可能存在文件上传漏洞. 什么样的网站会有文件上传漏洞?上传文件时，如果服务端代码未对客户端上传的文件进行严格的验证和过滤，就容易造成可以上传任意文件的情况，包括上传脚本文件（ asp aspx">
+<meta property="og:description" content="title 文件上传漏洞什么是文件上传漏洞？Web应用程序通常会有文件上传的功能, 例如在 BBS发布图片 , 在个人网站发布ZIP 压缩 包, 在办公平台发布DOC文件等 , 只要 Web应用程序允许上传文件, 就有可能存在文件上传漏洞. 什么样的网站会有文件上传漏洞?上传文件时，如果服务端代码未对客户端上传的文件进行严格的验证和过滤，就容易造成可以上传任意文件的情况，包括上传脚本文件（ as">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-11T11:09:38.335Z">
+<meta property="og:updated_time" content="2019-11-11T12:21:38.039Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -96,9 +96,10 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <h1 id="文件上传漏洞"><a href="#文件上传漏洞" class="headerlink" title="文件上传漏洞"></a>文件上传漏洞</h1><h2 id="什么是文件上传漏洞？"><a href="#什么是文件上传漏洞？" class="headerlink" title="什么是文件上传漏洞？"></a>什么是文件上传漏洞？</h2><p>Web应用程序通常会有文件上传的功能, 例如在 BBS发布图片 , 在个人网站发布ZIP 压缩 包, 在办公平台发布DOC文件等 , 只要 Web应用程序允许上传文件, 就有可能存在文件上传漏洞.</p>
+        <hr>
+<h2 id="title-文件上传漏洞"><a href="#title-文件上传漏洞" class="headerlink" title="title 文件上传漏洞"></a>title 文件上传漏洞</h2><h2 id="什么是文件上传漏洞？"><a href="#什么是文件上传漏洞？" class="headerlink" title="什么是文件上传漏洞？"></a>什么是文件上传漏洞？</h2><p>Web应用程序通常会有文件上传的功能, 例如在 BBS发布图片 , 在个人网站发布ZIP 压缩 包, 在办公平台发布DOC文件等 , 只要 Web应用程序允许上传文件, 就有可能存在文件上传漏洞.</p>
 <h2 id="什么样的网站会有文件上传漏洞"><a href="#什么样的网站会有文件上传漏洞" class="headerlink" title="什么样的网站会有文件上传漏洞?"></a>什么样的网站会有文件上传漏洞?</h2><p>上传文件时，如果服务端代码未对客户端上传的文件进行严格的验证和过滤，就容易造成可以上传任意文件的情况，包括上传脚本文件（ asp aspx php jsp 等格式的文件）<br>危害<br>非法用户可以利用上传的恶意脚本文件控制整个网站，甚至控制服务器 这个恶意的脚本文件，又被称为WebShell ，也可将WebShell 脚本称为一种网页后门，WebShell脚本具有非常强大的功能，比如查看服务器目录、服务器中的文件，执行系统命令等。</p>
-<h2 id="Webshell简介"><a href="#Webshell简介" class="headerlink" title="Webshell简介##"></a>Webshell简介##</h2><p>WebShell就是以asp、php、jsp或者cgi等网页文件形式存在的一种命令执行环境，也可以将其称之为一种网页后门。攻击者在入侵了一个网站后，通常会将这些asp或php后门文件与网站服务器web目录下正常的网页文件混在一起，然后使用浏览器来访问这些后门，得到一个命令执行环境，以达到控制网站服务器的目的（可以上传下载或者修改文件，操作数据库，执行任意命令等）。</p>
+<h2 id="Webshell简介"><a href="#Webshell简介" class="headerlink" title="Webshell简介"></a>Webshell简介</h2><p>WebShell就是以asp、php、jsp或者cgi等网页文件形式存在的一种命令执行环境，也可以将其称之为一种网页后门。攻击者在入侵了一个网站后，通常会将这些asp或php后门文件与网站服务器web目录下正常的网页文件混在一起，然后使用浏览器来访问这些后门，得到一个命令执行环境，以达到控制网站服务器的目的（可以上传下载或者修改文件，操作数据库，执行任意命令等）。</p>
 <p>WebShell后门隐蔽较性高，可以轻松穿越防火墙，访问WebShell时不会留下系统日志，只会在网站的web日志中留下一些数据提交记录，没有经验的管理员不容易发现入侵痕迹。</p>
 <p>攻击者可以将WebShell隐藏在正常文件中并修改文件时间增强隐蔽性，也可以采用一些函数对WebShell进行编码或者拼接以规避检测。除此之外，通过一句话木马的小马来提交功能更强大的大马可以更容易通过应用本身的检测。<code>&lt;?php eval($_POST[a]); ?&gt;</code>就是一个最常见最原始的小马。</p>
 <h2 id="造成文件上传漏洞的原因"><a href="#造成文件上传漏洞的原因" class="headerlink" title="造成文件上传漏洞的原因"></a>造成文件上传漏洞的原因</h2><ol>
@@ -124,11 +125,15 @@
 </ol>
 <p>绕过方法</p>
 <ol>
-<li>利用老版本的IIS6中的漏洞</li>
+<li>利用老版本的IIS6中的漏洞 </li>
 </ol>
-<pre><code>目录解析漏洞：如果网站目录中有一个 /.asp/目录，那么此目录下的一切内容都会被当作asp脚本来解析
-
-分号漏洞：IIS在解析文件名的时候可能将分号后面的内容丢弃，那么我们可以在上传的时候给后面加入分号内容来避免黑名单过滤，如 a.asp;jpg</code></pre><ol start="2">
+<ul>
+<li><p>目录解析漏洞：如果网站目录中有一个 /.asp/目录，那么此目录下的一切内容都会被当作asp脚本来解析</p>
+</li>
+<li><p>分号漏洞：IIS在解析文件名的时候可能将分号后面的内容丢弃，那么我们可以在上传的时候给后面加入分号内容来避免黑名单过滤，如 a.asp;jpg</p>
+</li>
+</ul>
+<ol start="2">
 <li><p>旧版Windows Server中存在空格和dot漏洞类似于 a.php. 和 a.php[空格] 这样的文件名存储后会被windows去掉点和空格，从而使得加上这两个东西可以突破过滤，成功上传，并且被当作php代码来执行(参考upload-labs pass-06的做法)</p>
 </li>
 <li><p>nginx(0.5.x,0.6.x,0.7&lt;=0.7.65,0.8&lt;=0.8.37)空字节漏洞,文件名.jpg%00.php会被解析为php代码运行（fastcgi会把这个文件当php看，不受空字节影响，但是检查文件后缀的那个功能会把空字节后面的东西抛弃，所以识别为jpg）</p>
