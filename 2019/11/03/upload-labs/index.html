@@ -10,15 +10,18 @@
   
   
   
-  <meta name="description" content="upload-labs:Pass-01~10Pass-011.禁用JS 2.burpsuit抓包修改文件后缀 3.直接在网站下查看元素，找到对应代码段，增加可通过的文件类型.php Pass-02MIME验证绕过： 先上传PHP文件，然后用burpsuit抓包修改Content-Type为image&#x2F;jpeg或者image&#x2F;png Pass-03这一关设置了黑名单，禁止上传.asp|.aspx|.">
+  <meta name="description" content="Pass-01 禁用JS burpsuit抓包修改文件后缀 直接在网站下查看元素，找到对应代码段，增加可通过的文件类型.php   Pass-02MIME验证绕过： 先上传PHP文件，然后用burpsuit抓包修改Content-Type为image&#x2F;jpeg或者image&#x2F;png  Pass-03这一关设置了黑名单，禁止上传.asp|.aspx|.php|.jsp后缀文件，但是可以上传其它任意后">
 <meta property="og:type" content="article">
 <meta property="og:title" content="upload-labs">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;03&#x2F;upload-labs&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="upload-labs:Pass-01~10Pass-011.禁用JS 2.burpsuit抓包修改文件后缀 3.直接在网站下查看元素，找到对应代码段，增加可通过的文件类型.php Pass-02MIME验证绕过： 先上传PHP文件，然后用burpsuit抓包修改Content-Type为image&#x2F;jpeg或者image&#x2F;png Pass-03这一关设置了黑名单，禁止上传.asp|.aspx|.">
+<meta property="og:description" content="Pass-01 禁用JS burpsuit抓包修改文件后缀 直接在网站下查看元素，找到对应代码段，增加可通过的文件类型.php   Pass-02MIME验证绕过： 先上传PHP文件，然后用burpsuit抓包修改Content-Type为image&#x2F;jpeg或者image&#x2F;png  Pass-03这一关设置了黑名单，禁止上传.asp|.aspx|.php|.jsp后缀文件，但是可以上传其它任意后">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-04T13:36:51.241Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191116094422788.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZlZ2V0YWJsZV9oYWtlcg==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191116095417775.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZlZ2V0YWJsZV9oYWtlcg==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-11-16T07:55:46.563Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191116094422788.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZlZ2V0YWJsZV9oYWtlcg==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -96,35 +99,60 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <h1 id="upload-labs-Pass-01-10"><a href="#upload-labs-Pass-01-10" class="headerlink" title="upload-labs:Pass-01~10"></a>upload-labs:Pass-01~10</h1><h2 id="Pass-01"><a href="#Pass-01" class="headerlink" title="Pass-01"></a>Pass-01</h2><p>1.禁用JS</p>
-<p>2.burpsuit抓包修改文件后缀</p>
-<p>3.直接在网站下查看元素，找到对应代码段，增加可通过的文件类型.php</p>
+        <h2 id="Pass-01"><a href="#Pass-01" class="headerlink" title="Pass-01"></a>Pass-01</h2><ol>
+<li>禁用JS</li>
+<li>burpsuit抓包修改文件后缀</li>
+<li>直接在网站下查看元素，找到对应代码段，增加可通过的文件类型.php</li>
+</ol>
+<hr>
 <h2 id="Pass-02"><a href="#Pass-02" class="headerlink" title="Pass-02"></a>Pass-02</h2><p>MIME验证绕过：</p>
 <p>先上传PHP文件，然后用burpsuit抓包修改Content-Type为image/jpeg或者image/png</p>
+<hr>
 <h2 id="Pass-03"><a href="#Pass-03" class="headerlink" title="Pass-03"></a>Pass-03</h2><p>这一关设置了黑名单，禁止上传.asp|.aspx|.php|.jsp后缀文件，但是可以上传其它任意后缀文件。我们可以上传 .php、.phtml、.phps、.php5、.pht、.Php等类似的格式绕过。<br>虽然这样能上传成功，但是.php5等文件不能解析，要正常解析还需要满足以下其中一种条件：</p>
-<p>1、Apache的 httpd.conf 中有如下配置代码：</p>
-<pre><code>AddType application/x-httpd-php .php .phtml .phps .php5 .pht</code></pre><p>2、上传 .htaccess 伪静态文件，内容如下：</p>
-<pre><code>&lt;FilesMatch &quot;phpinfo.php5&quot;&gt;
-  SetHandler application/x-httpd-php
-&lt;/FilesMatch&gt;</code></pre><blockquote>
-<p>用伪静态需要保证：</p>
-<p>①mod_rewrite模块开启 </p>
-<p>②目录设置是AllowOverride All</p>
+<ol>
+<li><p>Apache的 httpd.conf 中有如下配置代码：</p>
+<p> AddType application/x-httpd-php .php .phtml .phps .php5 .pht</p>
+</li>
+</ol>
+<ol start="2">
+<li><p>上传 .htaccess 伪静态文件，内容如下：</p>
+<p> &lt;FilesMatch “phpinfo.php5”&gt;<br>   SetHandler application/x-httpd-php</p>
+ </FilesMatch>
+
+</li>
+</ol>
+<blockquote>
+<p>用伪静态需要保证：<br>①mod_rewrite模块开启<br>②目录设置是AllowOverride All</p>
 </blockquote>
 <h2 id="Pass-04"><a href="#Pass-04" class="headerlink" title="Pass-04"></a>Pass-04</h2><p>这一关禁止上传.php|.php5|.php4|.php3|.php2|php1|.html|.htm|.phtml|.pHp|.pHp5|.pHp4|.pHp3|.pHp2|pHp1|.Html|.Htm|.pHtml|.jsp|.jspa|.jspx|.jsw|.jsv|.jspf|.jtml|.jSp|.jSpx|.jSpa|.jSw|.jSv|.jSpf|.jHtml|.asp|.aspx|.asa|.asax|.ascx|.ashx|.asmx|.cer|.aSp|.aSpx|.aSa|.aSax|.aScx|.aShx|.aSmx|.cEr|.sWf|.swf后缀文件</p>
 <p>而且还加上了</p>
 <pre><code>$file_ext = strtolower($file_ext)</code></pre><p>它可以将大写转换为小写，也就是说，我们不能通过改变后缀的大小写绕过，所有但是它却没有禁止.htaccess等类似后缀的文件，所以我们仍然可以通过上传.htaccess伪静态文件来绕过。</p>
-<p>1.先上传一个 .htaccess 文件，内容如下：</p>
-<pre><code>SetHandler application/x-httpd-php//伪静态规则：所有文件都会解析为php</code></pre><p>2.然后再上传一个.php6木马文件（只要不在禁止名单里，用.php几都行）</p>
-<h2 id="Pass-05"><a href="#Pass-05" class="headerlink" title="Pass-05"></a>Pass-05</h2><p>和之前一样，依旧是加了好多黑名单，并且还禁止了.htaccess后缀，但是却没有将后缀进行大小写统一，所以我们可以通过将后缀名改为.Php绕过</p>
-<h2 id="Pass-06"><a href="#Pass-06" class="headerlink" title="Pass-06"></a>Pass-06</h2><p>本关禁止了依旧是禁止了一大堆后缀，而且也不能通过大小写绕过，但是我们可以通过在后缀下面加空格来绕过。在windows下xx.jpg[空格] 或 xx.jpg. 这两类文件都是不允许存在的，若这样命名，windows会默认除去空格或点。但是在burpsuit中不会删除末尾的点和末尾的空格，因此我们可以通过burpsuit抓包，修改后缀名为.php[空格]</p>
-<h2 id="Pass-07"><a href="#Pass-07" class="headerlink" title="Pass-07"></a>Pass-07</h2><p>本关加上了</p>
-<pre><code>$file_ext = trim($file_ext); //首尾去空</code></pre><p>也就是说，它会把后缀中的空格去掉，但是并没有去掉点，所以可以用burp将后缀名改为.php.</p>
-<h2 id="Pass-08"><a href="#Pass-08" class="headerlink" title="Pass-08"></a>Pass-08</h2><p>还是黑名单，但是没有对后缀名进行去”::$DATA”处理，利用windows特性，可在后缀名中加” ::$DATA”绕过</p>
-<p><em>NTFS文件系统包括对备用数据流的支持。这不是众所周知的功能，主要包括提供与Macintosh文件系统中的文件的兼容性。备用数据流允许文件包含多个数据流。每个文件至少有一个数据流。在Windows中，此默认数据流称为：$ DATA。</em></p>
+<ol>
+<li>先上传一个 .htaccess 文件，内容如下：</li>
+</ol>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><figcaption><span>application/x-httpd-php//伪静态规则：所有文件都会解析为php```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">2. 然后再上传一个.php6木马文件（只要不在禁止名单里，用.php几都行）</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">## Pass-05 ##</span><br><span class="line">和之前一样，依旧是加了好多黑名单，并且还禁止了.htaccess后缀，但是却没有将后缀进行大小写统一，所以我们可以通过将后缀名改为.Php绕过</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">## Pass-06 ##</span><br><span class="line">本关依旧是禁止了一大堆后缀，而且也不能通过大小写绕过，但是我们可以通过在后缀下面加空格来绕过。</span><br><span class="line">在windows下xx.jpg[空格] 或 xx.jpg. 这两类文件都是不允许存在的，若这样命名，windows会默认除去空格或点。但是在burpsuit中不会删除末尾的点和末尾的空格，因此我们可以通过burpsuit抓包，修改后缀名为.php[空格]</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">## Pass-07 ##</span><br><span class="line">本关加上了</span><br><span class="line"></span><br><span class="line">    $file_ext = trim($file_ext); //首尾去空</span><br><span class="line">也就是说，它会把后缀中的空格去掉，但是并没有去掉点，所以可以用burp将后缀名改为.php.</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">## Pass-08 ##</span><br><span class="line">还是黑名单，但是没有对后缀名进行去“::$DATA”处理，利用windows特性，可在后缀名中加“::$DATA”绕过</span><br><span class="line"></span><br><span class="line">```NTFS文件系统包括对备用数据流的支持。这不是众所周知的功能，主要包括提供与Macintosh文件系统中的文件的兼容性。备用数据流允许文件包含多个数据流。每个文件至少有一个数据流。在Windows中，此默认数据流称为：$DATA。</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="Pass-09"><a href="#Pass-09" class="headerlink" title="Pass-09"></a>Pass-09</h2><p>黑名单，同时通过语句</p>
 <pre><code>$file_ext = str_ireplace(&apos;::$DATA&apos;, &apos;&apos;, $file_ext);</code></pre><p>对文件名进行了去::$DATA处理，但是我们可以通过.php. .来绕过，因为虽然它对文件名末尾的点进行了删除，但是只会删除一次，那么删除之后的文件名后缀为.php.，就可以绕过了。</p>
 <h2 id="Pass-10"><a href="#Pass-10" class="headerlink" title="Pass-10"></a>Pass-10</h2><p>本关会将敏感后缀（php)替换为空，所以我们可以将后缀名改为.pphphp双写绕过，这样即使他把php替换为空，那我们剩下的后缀还是php</p>
+<h2 id="Pass-11"><a href="#Pass-11" class="headerlink" title="Pass-11"></a>Pass-11</h2><p>本关提示上传路径可控；<br>可以用%00截断绕过。</p>
+<pre><code>当文件系统读取到%00时，会停止读取后面的字符串。
+利用%00截断需要满足两个条件：    
+1. PHP 版本 &lt; 5.3.4
+2. php.ini 中 magic_quotes_gpc=off</code></pre><p>用Burpsuit抓包做如下修改，Go一下即可上传成功<br><img src="https://img-blog.csdnimg.cn/20191116094422788.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZlZ2V0YWJsZV9oYWtlcg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<hr>
+<h2 id="Pass-12"><a href="#Pass-12" class="headerlink" title="Pass-12"></a>Pass-12</h2><p>本关依旧是上传路径可控，但是跟上一题不同的是这题save_path 从 GET 变成了 POST，此时不能再直接使用 %00 截断，原因是 %00 截断在 GET 中被 url 解码之后是空字符。但是在 POST 中 %00 不会被 url 解码，所以只能通过 burpsuite 修改 hex 值为 00 进行截断，也就是在post情况下，需要先对%00进行一个url编码。<br><img src="https://img-blog.csdnimg.cn/20191116095417775.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZlZ2V0YWJsZV9oYWtlcg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">编码后，%00会变为空格，此时Go一下即可。</p>
+<hr>
+<h2 id="Pass-13"><a href="#Pass-13" class="headerlink" title="Pass-13"></a>Pass-13</h2><p>本关检查图标内容开头2个字节，直接上传图片马即可。（能成功上传图片马，但是如果要利用的话，还需要进行文件包含。）<br>文件包含步骤：</p>
+<ol>
+<li>在网站根目录下新建upload.php文件，并写入<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    $filename  = $_GET[<span class="string">'filename'</span>];</span><br><span class="line">    <span class="keyword">include</span>($filename);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div></li>
+<li>将文件包含进去：<code>http://localhost/upload.php?filename=./upload/（要包含的文件名）</code>,比如我上传成功的文件为保存在upload目录下的8420191116021239.gif，则文件包含的方式为<code>http://localhost/upload.php?filename=./upload/8420191116021239.gif</code>，包含成功。</li>
+</ol>
+<hr>
+<h2 id="Pass-14"><a href="#Pass-14" class="headerlink" title="Pass-14"></a>Pass-14</h2><p>本关使用getimagesize()检查是否为图片文件，所以直接上传图片马即可成功。</p>
+<hr>
+<h2 id="Pass-15"><a href="#Pass-15" class="headerlink" title="Pass-15"></a>Pass-15</h2><p>本关使用exif_imagetype()检查是否为图片文件，依旧是直接上传图片马。</p>
+<hr>
 
       
     </div>
